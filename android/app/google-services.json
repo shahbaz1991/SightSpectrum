@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "279370576295",
+    "project_id": "matrixmediaproject",
+    "storage_bucket": "matrixmediaproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279370576295:android:b5ad137ea0186c68360682",
+        "android_client_info": {
+          "package_name": "com.demoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279370576295-1rro1tmdkpo1ovbfsntot1vsv52pj708.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.demoapp",
+            "certificate_hash": "e68e22b98c698494e9f6b49857adc30a2062914b"
+          }
+        },
+        {
+          "client_id": "279370576295-md1016ncu9s0b21kjml5s7ij7mhvllg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByoV770CoVCkSNHPX79SX6gePYy8GEJEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279370576295-md1016ncu9s0b21kjml5s7ij7mhvllg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
