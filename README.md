@@ -53,16 +53,16 @@ pod 1.11.3
 App working in both platforms iOS and Android
 
 RealTime Database Structure:
-    -details/
-    -users/
-    -online/  (it is created only when the user is logged in)
+    -details/   (storing user details w.r.t mobile number)
+    -users/     ( storing user's mobile number and password)
+    -online/    (it is created only when the user is logged in)
 
 dummy numbers for Testing:
 	  	
-Phone number> +91 55 5555 5555	      Verification code> 555555	
-Phone number> +91 33 3333 3333	      Verification code> 333333	
-Phone number> +91 12 3456 7890	      Verification code> 123456	
-Phone number> +91 44 4444 4444	      Verification code> 444444	
-Phone number> +91 22 2222 2222	      Verification code> 222222	
-Phone number> +91 11 1111 1111	      Verification code> 111111	
-Phone number> +91 88 8888 8888	      Verification code> 888888	
+Phone number> +91 55 5555 5555,	      Verification code> 555555	
+Phone number> +91 33 3333 3333,	      Verification code> 333333	
+Phone number> +91 12 3456 7890,	      Verification code> 123456	
+Phone number> +91 44 4444 4444,	      Verification code> 444444	
+Phone number> +91 22 2222 2222,	      Verification code> 222222	
+Phone number> +91 11 1111 1111,	      Verification code> 111111	
+Phone number> +91 88 8888 8888,	      Verification code> 888888	
