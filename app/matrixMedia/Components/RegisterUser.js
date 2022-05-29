@@ -27,6 +27,7 @@ const RegisterUser = (props) => {
     //useFocusEffect is called when component mounts and unmounts
     useFocusEffect(
         useCallback(()=>{
+            //null
         return ()=>{     //unsubscribing events and clearing state
             clearState();
             if(returnedValue) database().ref(`/users/+91${mobile}`).off('value',returnedValue);
@@ -136,7 +137,7 @@ const RegisterUser = (props) => {
 
             <View style={mainStyles.childContainer}>
                 <View style={[mainStyles.textInput, {flexDirection:'row',alignItems:'center'}, !toggle && {marginBottom: '8%'}]} >
-                    <Text style={mainStyles.mobileText}>+91</Text>
+                    <Text style={mainStyles.mobileText}>+91 </Text>
                     <TextInput 
                         style={mainStyles.mobileText} 
                         value={mobile} 

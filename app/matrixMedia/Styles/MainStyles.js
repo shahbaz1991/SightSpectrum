@@ -49,5 +49,15 @@ export const mainStyles = StyleSheet.create({
     mobileText: {
         fontSize: 20,
         color: Colors.textColor
+    },
+    passwordView:{
+        width:'100%',
+        flexDirection:'row',
+        justifyContent:'center',
+    },
+    passwordEye:{
+        position:'relative',
+        right:'90%',
+        top:'4%'
     }
 });

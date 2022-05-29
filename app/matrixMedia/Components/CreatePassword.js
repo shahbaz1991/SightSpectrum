@@ -17,12 +17,13 @@ const CreatePassword = (props) => {
     const [toastMsg, setToastMsg] = useState('');
     const [toastTitle, setToastTitle] = useState('');
     const [activityIndicator, setActivityIndicator] = useState(false);
+    const [secure, setSecure] = useState(true);
     var returnedValue;
 
     //useFocusEffect is called when component mounts and unmounts
     useFocusEffect(
         useCallback(()=>{
-            //null
+              //null
         return ()=>{     //unsubscribing events and clearing state
             clearState();
             if(returnedValue) database().ref(`/users/+91${props.route.params.mobileNo}`).off('value',returnedValue);
@@ -37,6 +38,7 @@ const CreatePassword = (props) => {
         setToastMsg('');
         setToastTitle('');
         setActivityIndicator(false);
+        setSecure(true);
     };
 
     //validating password
@@ -97,17 +99,30 @@ const CreatePassword = (props) => {
                 </View>
 
                 <View style={mainStyles.childContainer}>
-                    <TextInput 
-                        style={mainStyles.textInput} 
-                        value={password} 
-                        onChangeText={(value)=>setPassword(value)}
-                        placeholder='Enter New Password'
-                    />            
+                    <View style={mainStyles.passwordView}>
+                        <TextInput 
+                            style={[mainStyles.textInput,{marginLeft:'8%'}]} 
+                            value={password} 
+                            onChangeText={(value)=>setPassword(value)}
+                            secureTextEntry={secure}
+                            placeholder='Enter Password'
+                            maxLength={15}
+                        />   
+                        <TouchableOpacity 
+                            onPress={()=>setSecure(!secure)}
+                            style={mainStyles.passwordEye}
+                        >
+                            <Text>{secure ? 'show' : 'hide'}</Text>
+                        </TouchableOpacity> 
+                    </View>
+
                     <TextInput 
                         style={[mainStyles.textInput, {marginBottom:'8%'}]} 
                         value={reEnterPassword} 
                         onChangeText={(value)=>setReEnterPassword(value)}
+                        secureTextEntry={true}
                         placeholder='Re-Enter Password'
+                        maxLength={15}
                     />
 
                     <TouchableOpacity 

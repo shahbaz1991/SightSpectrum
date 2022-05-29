@@ -17,6 +17,7 @@ const LoginScreen = (props) => {
     const [toastMsg, setToastMsg] = useState('');
     const [toastTitle, setToastTitle] = useState('');
     const [activityIndicator, setActivityIndicator] = useState(false);
+    const [secure, setSecure] = useState(true);
     var valueReturned2;
 
     //useFocusEffect is called when component mounts and unmounts
@@ -129,7 +130,7 @@ const LoginScreen = (props) => {
 
                 <View style={mainStyles.childContainer}>
                     <View style={[mainStyles.textInput, {flexDirection:'row',alignItems:'center'}]} >
-                        <Text style={mainStyles.mobileText}>+91</Text>
+                        <Text style={mainStyles.mobileText}>+91 </Text>
                         <TextInput 
                             style={mainStyles.mobileText} 
                             value={mobile} 
@@ -140,13 +141,23 @@ const LoginScreen = (props) => {
                         />    
                     </View>
 
-                    <TextInput 
-                        style={[mainStyles.textInput, {marginBottom: '12%'}]} 
-                        value={password} 
-                        onChangeText={(value)=>setPassword(value)}
-                        placeholder='Enter Password'
-                    />
-
+                    <View style={[mainStyles.passwordView, {marginBottom: '10%'}]}>
+                        <TextInput 
+                            style={[mainStyles.textInput, {marginLeft:'8%'}]} 
+                            value={password} 
+                            onChangeText={(value)=>setPassword(value)}
+                            secureTextEntry={secure}
+                            placeholder='Enter Password'
+                            maxLength={15}
+                        />
+                        <TouchableOpacity 
+                            onPress={()=>setSecure(!secure)}
+                            style={mainStyles.passwordEye}
+                        >
+                            <Text>{secure ? 'show' : 'hide'}</Text>
+                        </TouchableOpacity>
+                    </View>
+    
                     <TouchableOpacity 
                         style={mainStyles.buttons}
                         onPress={checkLogin}

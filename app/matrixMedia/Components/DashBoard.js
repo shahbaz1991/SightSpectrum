@@ -95,6 +95,7 @@ const DashBoard = (props) => {
                             { 
                                 text: "OK", onPress: () => {
                                     setEdit(false);
+                                    setToast(false);
                                 }
                             }
                         ]
