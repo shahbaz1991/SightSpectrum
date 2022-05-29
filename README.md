@@ -53,9 +53,9 @@ pod 1.11.3
 App working in both platforms iOS and Android
 
 RealTime Database Structure:
-    -details/   (storing user details w.r.t mobile number)
-    -users/     ( storing user's mobile number and password)
-    -online/    (it is created only when the user is logged in)
+    -details/   (storing user details w.r.t mobile number),     
+    -users/     ( storing user's mobile number and password),   
+    -online/    (it is created only when the user is logged in),    
 
 dummy numbers for Testing:
 	  	
