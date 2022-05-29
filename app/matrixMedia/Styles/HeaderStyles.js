@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 import { Dimensions } from "react-native";
-import { render } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
 import { Colors } from "../Assets/Colors/colors";
 
 export const headerStyles = StyleSheet.create({
@@ -24,6 +23,5 @@ export const headerStyles = StyleSheet.create({
         height : '92%',
         justifyContent: 'center',
         alignItems: 'center',
-    }
-
+    },
 });

@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
-import {View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView} from 'react-native';
+// Description
+// This is the main component which shows the header and other components as its child
+
+//import React, Components and other libraries
+import React from 'react';
+import {View, Text } from 'react-native';
 import { headerStyles } from '../Styles/HeaderStyles';
 
 const HeaderComp = (props) => {

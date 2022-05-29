@@ -1,3 +1,4 @@
+//importing React, Components and other libraries
 import React, { useState, useCallback } from 'react';
 import {View, Text, TouchableOpacity, TextInput, Keyboard} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -46,7 +47,6 @@ const LoginScreen = (props) => {
 
     //clearing state values
     const  clearState=()=>{
-        console.log('clear login State');
         setMobile('');
         setPassword('');
         setToast(false);
@@ -69,12 +69,14 @@ const LoginScreen = (props) => {
                         async function setUser(){
                             const reference = await database().ref(`/online/+91${mobile}`);
                             await reference.set(true)
-                            .then(() => console.log('Online presence set'))
-                            .catch(()=>{console.log('error in dash board')})
+                            .then(() => {
+                                setActivityIndicator(false);
+                                props.navigation.navigate('DashBoardScreen',{mobileNo: `+91${mobile}`});
+                            })
+                            .catch(()=>{})
                         };
                         setUser();
                         setActivityIndicator(false);
-                        props.navigation.navigate('DashBoardScreen',{mobileNo: `+91${mobile}`});
                     } else{
                         setActivityIndicator(false);
                         setToast(true);
@@ -107,6 +109,7 @@ const LoginScreen = (props) => {
         props.navigation.navigate('RegisterUserScreen');
     };
 
+    //dismiss toast message
     const dismissToast = () =>{
         setToast(false);
         Keyboard.dismiss();

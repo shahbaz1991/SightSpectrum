@@ -8,5 +8,5 @@ export const Colors = {
     toastBackground: '#991431',
     toastMsg: '#FFE9EE',
     Tealwhite: 'rgba(240,252,250,0.5)',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
 };

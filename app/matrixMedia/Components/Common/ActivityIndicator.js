@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import {ActivityIndicator, View, Text, TouchableOpacity, TextInput} from 'react-native';
+// Description
+// Its an overlay indicator which shows up when api calls are made or component is loaded
+
+//importing React, Components and other libraries
+import React from 'react';
+import {ActivityIndicator, View, Text} from 'react-native';
 import { Colors } from '../../Assets/Colors/colors';
 import { activityIndicatorStyles } from '../../Styles/ActivityIndicatorStyle';
 
 const ActivityIndicatorComp = (props) => {
-    const [mobile, setMobile] = useState('');
+
     return(
         <View style={activityIndicatorStyles.mainContainer}>
             <View  style={activityIndicatorStyles.innerContainer}>

@@ -1,3 +1,4 @@
+//import React, Components and other libraries
 import React, {useState, useCallback} from 'react';
 import {View, Text, TouchableOpacity, TextInput, Keyboard} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -26,9 +27,7 @@ const RegisterUser = (props) => {
     //useFocusEffect is called when component mounts and unmounts
     useFocusEffect(
         useCallback(()=>{
-        console.log('userEffect Regis');
         return ()=>{     //unsubscribing events and clearing state
-            console.log('unsubscribe userEffect Regis');
             clearState();
             if(returnedValue) database().ref(`/users/+91${mobile}`).off('value',returnedValue);
         };
@@ -56,9 +55,7 @@ const RegisterUser = (props) => {
             returnedValue = database()
             .ref(`/users/+91${mobile}`)     //check if the mobile number is already registered
             .on('value',snapshot => {
-                console.log('snapshot',snapshot.val());     
                 if(snapshot.val()){
-                    console.log('in if');
                     setToast(true)
                     setToastTitle('Message')
                     setToastMsg('Mobile number already registered')
@@ -67,7 +64,6 @@ const RegisterUser = (props) => {
                 } else {
                     async function registerUser(){
                         const confirmation = await auth().signInWithPhoneNumber(`+91${mobile}`);    //registering mobile number
-                        console.log('confirmation.confirm',confirmation.confirm);
                         if(confirmation.confirm){
                             setToast(false);
                             setConfirm(confirmation);
@@ -102,7 +98,6 @@ const RegisterUser = (props) => {
                 });
                 setActivityIndicator(false);
             } catch (error) {
-                console.log(error.code,'Invalid code.');
                 setToast(true)
                 setToastTitle('Error')
                 setToastMsg('Invalid OTP')
@@ -122,7 +117,8 @@ const RegisterUser = (props) => {
     const loginPressed=()=>{
         props.navigation.navigate('LoginScreen');
     };
-
+    
+    //dismiss toast message
     const dismissToast = ()=>{
         setToast(false);
         Keyboard.dismiss();

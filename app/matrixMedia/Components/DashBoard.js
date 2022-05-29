@@ -1,3 +1,4 @@
+//import React, Components and other libraries
 import React, {useState, useCallback} from 'react';
 import {View, Text, TouchableOpacity, TextInput, Keyboard, Alert} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -118,7 +119,7 @@ const DashBoard = (props) => {
         };
     };
 
-    //dissming toast message after clicking
+    //dissming toast message 
     const dismissToast = ()=>{
         setToast(false);
         Keyboard.dismiss();

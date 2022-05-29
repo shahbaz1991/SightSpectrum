@@ -1,34 +1,28 @@
-import React, { useState } from 'react';
-import {View, Text, TouchableOpacity, TextInput} from 'react-native';
-import database from '@react-native-firebase/database';
-import { mainStyles } from '../Styles/MainStyles';
-// import HeaderComp from './Header';
-import { Colors } from '../Assets/Colors/colors';
+// Description
+// Component which is show at the bottom for errors or messages
+// Please Note: User needs to click the 'Dismiss' text to disable the toast component 
+
+//import React, Components and other libraries
+import React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
 import { toastMsgStyle } from '../../Styles/ToastMsgStyle';
 
 const ToastMsg = ({title, message, dismissToast}) => {
-    const [mobile, setMobile] = useState('');
-    const [password, setPassword] = useState('');
-
-    // const disableToast=({message, dismissToast})=>{
-    //    console.log('toast disable');
-    // };
 
     return(
             <View style={toastMsgStyle.mainContainer}>
+
                 <View style={toastMsgStyle.mainBar}>
                     <Text style={toastMsgStyle.msgTitle}>{title}</Text>
                     <TouchableOpacity 
-                    // style={mainStyles.buttons}
-                    onPress={dismissToast}
+                        onPress={dismissToast}
                     >
                         <Text style={toastMsgStyle.dissmissText}>Dismiss</Text>
                     </TouchableOpacity> 
-                </View>
-                
-            <Text style={toastMsgStyle.mainMsg}>{message}</Text>
-            </View>
-           
+                </View>  
+                <Text style={toastMsgStyle.mainMsg}>{message}</Text>
+
+            </View>       
     );
 };
 
