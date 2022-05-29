@@ -37,7 +37,6 @@ const DashBoard = (props) => {
                             setState(snapshot.val().state);
                             setDbEmpty(false)
                             setEdit(false);
-                            console.log('useEff',edit);
                         } else{
                             setDbEmpty(true);
                             setEdit(true);
@@ -88,7 +87,6 @@ const DashBoard = (props) => {
                 state : state
                 })
                 .then(() => {
-                    console.log('Data updated.',edit)
                     setActivityIndicator(false);
                     Alert.alert(
                         "Message",
@@ -97,7 +95,6 @@ const DashBoard = (props) => {
                             { 
                                 text: "OK", onPress: () => {
                                     setEdit(false);
-                                    console.log("OK Pressed")
                                 }
                             }
                         ]
@@ -108,7 +105,6 @@ const DashBoard = (props) => {
                     setToast(true);
                     setToastMsg('Error');
                     setToastTitle('Somthing went wrong, Please try again');
-                    console.log('error db')
                 });
             } else {
                 setActivityIndicator(false);

@@ -50,7 +50,6 @@ const CreatePassword = (props) => {
               password : password,
             })
             .then(() => {
-                console.log('Data updated.')
                 setActivityIndicator(false);
                 Alert.alert(
                     "Message",
@@ -59,14 +58,12 @@ const CreatePassword = (props) => {
                         { 
                             text: "OK", onPress: () => {
                                 props.navigation.navigate('LoginScreen');   //navigating to login screen if password storing is success
-                                console.log("OK Pressed")
                             }
                         }
                     ]
                 );
             })
             .catch(()=>{
-                console.log('error db')
                 setToast(true);
                 setToastTitle('Error');
                 setToastMsg('Something went wrong with Firebase Database');
