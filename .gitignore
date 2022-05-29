@@ -65,6 +65,3 @@ buck-out/
 .gitattributes
 .prettierrc.js
 .watchmanconfig
-
-/app/
-App.js
