@@ -1,10 +1,14 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * Developer Name   : Sk Shahbaz Ali
+ * Location         : Kolkata
+ * Project          : DemoApp (Matrix Media Project)
+ * Descritption     : Project is based on login a user and storing its details in database
+ * Start Date       : Saturday 28th May 2022
+ * End Date         : Sunday 29th May 2022
+ * Submission Date  : Monday 30th May 2022
  */
+
+// importing react, components and other libraries
 import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaView,StatusBar } from 'react-native';
