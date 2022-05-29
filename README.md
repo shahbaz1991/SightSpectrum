@@ -56,7 +56,7 @@ RealTime Database Structure:
     details/
     users/
     online/  (it is created only when the user is logged in)
-=============================================
+
 dummy numbers for Testing:
     Phone number	    Verification code	
     +91 55 5555 5555	    555555	
