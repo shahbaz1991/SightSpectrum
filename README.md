@@ -49,20 +49,20 @@ Common Components Used:
 version details:
 npm 7.11.2
 pod 1.11.3
-=============================================
+
 App working in both platforms iOS and Android
-=============================================
+
 RealTime Database Structure:
-    details/
-    users/
-    online/  (it is created only when the user is logged in)
+    -details/
+    -users/
+    -online/  (it is created only when the user is logged in)
 
 dummy numbers for Testing:
-    Phone number	    Verification code	
-    +91 55 5555 5555	    555555	
-    +91 33 3333 3333	    333333	
-    +91 12 3456 7890	    123456	
-    +91 44 4444 4444	    444444	
-    +91 22 2222 2222	    222222	
-    +91 11 1111 1111	    111111	
-    +91 88 8888 8888	    888888	
+Phone number	    Verification code	
++91 55 5555 5555	    555555	
++91 33 3333 3333	    333333	
++91 12 3456 7890	    123456	
++91 44 4444 4444	    444444	
++91 22 2222 2222	    222222	
++91 11 1111 1111	    111111	
++91 88 8888 8888	    888888	
