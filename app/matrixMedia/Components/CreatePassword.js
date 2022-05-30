@@ -1,6 +1,6 @@
 //import React, Components and other libraries
 import React, { useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, TextInput, Keyboard, Alert} from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Keyboard, Alert, BackHandler} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import database from '@react-native-firebase/database';
 import { mainStyles } from '../Styles/MainStyles';
@@ -18,19 +18,29 @@ const CreatePassword = (props) => {
     const [toastTitle, setToastTitle] = useState('');
     const [activityIndicator, setActivityIndicator] = useState(false);
     const [secure, setSecure] = useState(true);
+    BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick); //retrict user from going back
+
     var returnedValue;
 
     //useFocusEffect is called when component mounts and unmounts
     useFocusEffect(
         useCallback(()=>{
-              //null
+            BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
         return ()=>{     //unsubscribing events and clearing state
             clearState();
             if(returnedValue) database().ref(`/users/+91${props.route.params.mobileNo}`).off('value',returnedValue);
+            BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
+
         };
         },[])
     );
 
+     //disable back button if otp is send
+     const handleBackButtonClick=()=>{
+        return true;
+    };
+
+    //setting state ot its initial value 
     const clearState=()=>{
         setPassword('');
         setReEnterPassword('')

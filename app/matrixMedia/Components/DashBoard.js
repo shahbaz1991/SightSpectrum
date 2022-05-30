@@ -1,6 +1,6 @@
 //import React, Components and other libraries
 import React, {useState, useCallback} from 'react';
-import {View, Text, TouchableOpacity, TextInput, Keyboard, Alert} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput, Keyboard, Alert, BackHandler} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import database from '@react-native-firebase/database';
 import { dashBoardScreenStyle } from '../Styles/DashBoardStyle';
@@ -21,6 +21,7 @@ const DashBoard = (props) => {
     const [toastTitle, setToastTitle] = useState('');
     const [dbEmpty, setDbEmpty] = useState(false);
     const [edit, setEdit] = useState(true);
+    BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick); //retrict user from going back
     var valueReturned2, retunredValue3;
 
     //useFocusEffect is called when component mounts and unmounts
@@ -43,16 +44,23 @@ const DashBoard = (props) => {
                         };     
                     });
             };
-            checkdatabase();
+            // checkdatabase();
+            BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
 
             return ()=> {       //unsubscribing events and clearing state
                 clearState();
                 if(retunredValue1) database().ref(`/details/${props.route.params.mobileNo}`).off('value',retunredValue1);
                 if(valueReturned2)  database().ref(`/online/${props.route.params.mobileNo}`).off('value',retunredValue2);
                 if(retunredValue3)  database().ref(`/details/+91${props.route.params.mobileNo}`).off('value',retunredValue3);
+                BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
             };
         },[])
     );
+
+     //disable back button
+    const handleBackButtonClick=()=>{
+        return true;
+    };
 
     //resetting state values to initial state
     const clearState=()=>{
@@ -141,6 +149,7 @@ const DashBoard = (props) => {
                 }
             </View>
 
+            {edit ? <Text>You can edit the fields</Text> : <Text>*Fields are not editable</Text>}
             <View style={dashBoardScreenStyle.childContainer}>
                 <View style={dashBoardScreenStyle.childBlock}>
                     <Text style={dashBoardScreenStyle.childTitle}>Name</Text>
