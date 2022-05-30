@@ -22,7 +22,6 @@ const RegisterUser = (props) => {
     const [toastTitle, setToastTitle] = useState('');
     const [editable, setEditable] = useState(true);
     const [activityIndicator, setActivityIndicator] = useState(false);
-
     const [timer, setTimer] = useState(120);
     const [reSet, setReSet] = useState(false);
     const timerRef = useRef(timer);
@@ -58,6 +57,8 @@ const RegisterUser = (props) => {
         setToastTitle('');
         setEditable(false);
         setActivityIndicator(false);
+        setTimer(120);
+        setReSet(false);
     };
 
     //verifying mobile number
