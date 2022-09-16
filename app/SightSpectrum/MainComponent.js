@@ -1,3 +1,4 @@
+//importing React, Components and other libraries
 import React, { useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack'; 
 import ScreenOne from './ScreenOne';
@@ -6,7 +7,7 @@ import ScreenThree from './ScreenThree';
 import { isEmulator } from 'react-native-device-info';
 import { Alert } from 'react-native';
 
-const Stack = createStackNavigator();   //creating Stack navigator
+const Stack = createStackNavigator(); //creating Stack navigator
 
 const MainComp = ()=> {
 
@@ -33,4 +34,5 @@ const MainComp = ()=> {
         </Stack.Navigator>    
     );
 };
+
 export default MainComp;

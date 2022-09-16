@@ -1,7 +1,7 @@
 /**
  * Developer Name   : Sk Shahbaz Ali
  * Location         : Kolkata
- * Project          : DemoApp (SightSpectrum Project)
+ * Project          : DemoApp ( SightSpectrum Project )
  * Descritption     : Project is based on React Native
  * Start Date       : Wednesday 16th September 2022
  * End Date         : Wednesday 16th September 2022

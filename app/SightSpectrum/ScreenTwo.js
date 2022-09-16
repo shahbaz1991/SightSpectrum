@@ -7,7 +7,7 @@ import { Colors } from "./assets/colors/colors";
 import { Label } from "./label/lable";
 import { ScreenStyles } from "./styles/ScreenStyles";
 
-const ScreenTwo = (props) =>{
+const ScreenTwo = ( props ) =>{
     const {navigation, name} = props;
 
     //initialising a reset variable for slider 
@@ -16,7 +16,7 @@ const ScreenTwo = (props) =>{
     //dimond image for slider
     const CheckoutButton = () => {
         return(
-            <Image resizeMode='cover' style={{height:30,width:30}} source={require('../SightSpectrum/assets/images/dimond.png')}/>
+            <Image resizeMode='cover' style={{height:30,width:30}} source={require('../SightSpectrum/assets/images/dimond_new.png')}/>
         );
     }; 
 

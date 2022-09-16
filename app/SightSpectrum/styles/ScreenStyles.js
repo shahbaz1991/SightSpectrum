@@ -58,5 +58,5 @@ export const ScreenStyles = StyleSheet.create({
         marginHorizontal: '5%',
         marginVertical: '2%',
         color: Colors.white
-    }
+    },
 });

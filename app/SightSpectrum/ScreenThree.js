@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Label } from "./label/lable";
 import { ScreenStyles } from "./styles/ScreenStyles";
 
-const ScreenThree = (props) =>{
+const ScreenThree = ( props ) =>{
     return (
         <View style={ScreenStyles.background}>
             <Text style={ScreenStyles.textRight}>Name: {props?.name ? props.name : 'No Name'}</Text>

@@ -6,7 +6,7 @@ import { Label } from "./label/lable";
 import { updateName } from "./redux/actions";
 import { ScreenStyles } from "./styles/ScreenStyles";
 
-const ScreenOne = (props) =>{
+const ScreenOne = ( props ) =>{
     const [name, setName] = useState('');
     const {nameFromRedux, updateName, navigation} = props;
 

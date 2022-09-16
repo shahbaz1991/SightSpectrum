@@ -1,4 +1,4 @@
-export const Label = {
+export const Label ={
     pressMe: 'Press Me',
     buttonVariation: '4 variations of a button',
     moveToScreenTwo: 'Go to Screen Two',

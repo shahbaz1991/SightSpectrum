@@ -9,7 +9,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './app/SightSpectrum/redux/reducer';
 
-const initStore = () => createStore(reducer);
+const initStore = () => createStore( reducer );
 const store = initStore();
 
 const RNApp = () => (

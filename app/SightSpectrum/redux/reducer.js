@@ -4,7 +4,7 @@ const initialState = {
     name : ''
 };
 
-const reducer = (state = initialState, action ) => {
+const reducer = ( state = initialState, action ) => {
     switch (action.type){
         case UPDATE_NAME:
         return {
